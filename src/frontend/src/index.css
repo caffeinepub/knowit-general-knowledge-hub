@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/assets/fonts/BricolageGrotesque.woff2") format("woff2");
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.875rem;
+    /* Dark space theme - primary bg #0B1220 */
+    --background: 0.13 0.03 250;
+    --foreground: 0.985 0.005 250;
+    --card: 0.17 0.04 250;
+    --card-foreground: 0.985 0.005 250;
+    --popover: 0.19 0.04 250;
+    --popover-foreground: 0.985 0.005 250;
+    --primary: 0.72 0.17 220;
+    --primary-foreground: 0.1 0.02 250;
+    --secondary: 0.27 0.045 250;
+    --secondary-foreground: 0.985 0.005 250;
+    --muted: 0.22 0.035 250;
+    --muted-foreground: 0.65 0.04 250;
+    --accent: 0.72 0.17 220;
+    --accent-foreground: 0.1 0.02 250;
+    --destructive: 0.65 0.22 25;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.27 0.045 250;
+    --input: 0.22 0.035 250;
+    --ring: 0.72 0.17 220;
+    --chart-1: 0.72 0.17 220;
+    --chart-2: 0.79 0.13 185;
+    --chart-3: 0.83 0.16 85;
+    --chart-4: 0.7 0.19 50;
+    --chart-5: 0.72 0.19 145;
+    --sidebar: 0.15 0.035 250;
+    --sidebar-foreground: 0.985 0.005 250;
+    --sidebar-primary: 0.72 0.17 220;
+    --sidebar-primary-foreground: 0.1 0.02 250;
+    --sidebar-accent: 0.22 0.035 250;
+    --sidebar-accent-foreground: 0.985 0.005 250;
+    --sidebar-border: 0.27 0.045 250;
+    --sidebar-ring: 0.72 0.17 220;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .gradient-border-blue {
+    border: 1.5px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+  }
+  .gradient-border-blue::before {
+    content: "";
+    position: absolute;
+    inset: -1.5px;
+    border-radius: inherit;
+    background: linear-gradient(
+      135deg,
+      oklch(0.72 0.17 220),
+      oklch(0.55 0.2 260)
+    );
+    z-index: -1;
+  }
+  .gradient-border-yellow::before {
+    content: "";
+    position: absolute;
+    inset: -1.5px;
+    border-radius: inherit;
+    background: linear-gradient(
+      135deg,
+      oklch(0.83 0.16 85),
+      oklch(0.75 0.18 60)
+    );
+    z-index: -1;
+  }
+  .gradient-border-teal::before {
+    content: "";
+    position: absolute;
+    inset: -1.5px;
+    border-radius: inherit;
+    background: linear-gradient(
+      135deg,
+      oklch(0.79 0.13 185),
+      oklch(0.7 0.15 200)
+    );
+    z-index: -1;
+  }
+  .gradient-border-orange::before {
+    content: "";
+    position: absolute;
+    inset: -1.5px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, oklch(0.7 0.19 50), oklch(0.65 0.2 35));
+    z-index: -1;
+  }
+  .gradient-border-green::before {
+    content: "";
+    position: absolute;
+    inset: -1.5px;
+    border-radius: inherit;
+    background: linear-gradient(
+      135deg,
+      oklch(0.72 0.19 145),
+      oklch(0.65 0.2 165)
+    );
+    z-index: -1;
+  }
+  .gradient-border-purple::before {
+    content: "";
+    position: absolute;
+    inset: -1.5px;
+    border-radius: inherit;
+    background: linear-gradient(
+      135deg,
+      oklch(0.48 0.22 295),
+      oklch(0.55 0.25 310)
+    );
+    z-index: -1;
+  }
+}
